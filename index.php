@@ -25,7 +25,7 @@
           <input type="text" name="username" placeholder="Enter Username" required> <br>
           <input type="email" name="email" placeholder="Enter Email" required> <br>
           <input type="password" name="password" placeholder="Enter Password" required> <br> 
-          <button type="submit" name="btn-signup">SIGN UP</button>     
+          <button type="submit" name="btn-signup">SIGN UP NYAHAHAHAHAHAHAHA</button>     
     </form>      
   </body>
   </html>
