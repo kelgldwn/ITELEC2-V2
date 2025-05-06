@@ -2,15 +2,16 @@
 require_once 'authentication/admin-class.php';
 
 $admin = new ADMIN();
-if(!$admin->isUserLoggedIn())
-{
-    $admin->redirect('../../');
+
+if (!$admin->isUserLoggedIn()) {
+    header("Location: ../../");
 }
 
 $stmt = $admin->runQuery("SELECT * FROM user WHERE id = :id");
 $stmt->execute(array(":id" => $_SESSION['adminSession']));
 $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +20,10 @@ $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
     <title>ADMIN DASHBOARD</title>
 </head>
 <body>
-    <h1>WELCOME <?php echo $user_data['email']?></h1>
-    <button><a href="authentication/admin-class.php?admin_signout">SIGN OUT</button>
+    <h1>WELCOME, <?php echo htmlspecialchars($user_data['email']); ?></h1>
+
+    <button>
+        <a href="authentication/admin-class.php?admin_signout=true">SIGN OUT</a>
+    </button>
 </body>
 </html>
