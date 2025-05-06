@@ -303,7 +303,7 @@ class ADMIN
             $mail->Username = $smtp_email;
             $mail->Password = $smtp_password;
     
-            $mail->setFrom($smtp_email, "kissel");
+            $mail->setFrom($smtp_email, "kelmar");
             $mail->addAddress($email);
     
             $mail->isHTML(true);
