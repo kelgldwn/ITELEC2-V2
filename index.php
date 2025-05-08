@@ -86,7 +86,7 @@ a {
 
 
     </style>
-    
+
 </head>
 <body>
 
@@ -97,6 +97,8 @@ a {
     <input type="password" name="password" placeholder="Enter Password" required>
     <button type="submit" name="btn-signin">SIGN IN</button>
     <p><a href="forgot-password.php">Forgot Password?</a></p>
+    <p><a href="forgot-password.php">Reset Password?</a></p>
+
 </form>
 
 <h1>REGISTRATION</h1>

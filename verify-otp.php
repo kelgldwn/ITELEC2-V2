@@ -10,28 +10,28 @@
     <title>Verify OTP</title>
     <style>
         body {
+            margin: 0;
+            padding: 20px;
             font-family: Arial, sans-serif;
-    padding: 20px;
-    margin: 0;
-    background-image: url('src/navyblue.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+            background-color:rgb(244, 244, 244);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
             margin-bottom: 20px;
-        }
-
-        form {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         input[type="number"],
@@ -42,37 +42,43 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
+            font-size: 16px;
         }
 
         button {
-            background-color: #17a2b8;
+            background-color: #28a745;
             color: white;
             border: none;
             font-weight: bold;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         button:hover {
-            background-color: #138496;
+            background-color: #218838;
         }
 
         @media (max-width: 500px) {
-            body {
-                padding: 10px;
+            .container {
+                padding: 20px;
             }
 
-            form {
-                padding: 15px;
+            input, button {
+                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
+
+<div class="container">
     <h1>Enter OTP</h1>
     <form action="dashboard/admin/authentication/admin-class.php" method="POST">
         <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?>">
         <input type="number" name="otp" placeholder="Enter OTP" required>
         <button type="submit" name="btn-verify">Verify</button>
     </form>
+</div>
+
 </body>
 </html>
