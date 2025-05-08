@@ -1,13 +1,12 @@
 <?php
-   include_once 'config/setting-configuration.php';
+    include_once __DIR__ . '/config/setting-configuration.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Forgot Password</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verify OTP</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,7 +33,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        input[type="number"],
+        input[type="email"],
         button {
             width: 100%;
             padding: 12px;
@@ -45,7 +44,7 @@
         }
 
         button {
-            background-color: #17a2b8;
+            background-color: #28a745;
             color: white;
             border: none;
             font-weight: bold;
@@ -53,7 +52,7 @@
         }
 
         button:hover {
-            background-color: #138496;
+            background-color: #218838;
         }
 
         @media (max-width: 500px) {
@@ -68,11 +67,26 @@
     </style>
 </head>
 <body>
-    <h1>Enter OTP</h1>
-    <form action="dashboard/admin/authentication/admin-class.php" method="POST">
-        <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?>">
-        <input type="number" name="otp" placeholder="Enter OTP" required>
-        <button type="submit" name="btn-verify">Verify</button>
-    </form>
+
+<h1>Forgot Password</h1>
+<form action="dashboard/admin/authentication/admin-class.php" method="POST">
+    <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?>">
+    <input type="email" name="email" placeholder="Enter your registered email" required>
+    <button type="submit" name="btn-forgot-password">Send Reset Link</button>
+</form>
+
+<!-- Back Button -->
+<div style="text-align: center; margin-top: 15px;">
+    <a href="index.php" style="
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #6c757d;
+        color: white;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+    ">Back</a>
+</div>
+
 </body>
 </html>
