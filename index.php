@@ -97,7 +97,6 @@ a {
     <input type="password" name="password" placeholder="Enter Password" required>
     <button type="submit" name="btn-signin">SIGN IN</button>
     <p><a href="forgot-password.php">Forgot Password?</a></p>
-    <p><a href="reset-password.php">Reset Password?</a></p>
 
 </form>
 

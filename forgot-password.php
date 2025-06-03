@@ -71,8 +71,8 @@
 <h1>Forgot Password</h1>
 <form action="dashboard/admin/authentication/admin-class.php" method="POST">
     <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?>">
-    <input type="email" name="email" placeholder="Enter your registered email" required>
-    <button type="submit" name="btn-forgot-password">Send Reset Link</button>
+    <input type="email" name="email" placeholder="Enter your email" required />
+    <button type="submit" name="btn-forgot-password">Send OTP</button>
 </form>
 
 <!-- Back Button -->

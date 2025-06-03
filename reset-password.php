@@ -1,15 +1,12 @@
 <?php
     include_once __DIR__ . '/config/setting-configuration.php';
-
-    $token = $_GET['token'] ?? '';
-    $email = $_GET['email'] ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reset Password</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -36,7 +33,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        input[type="password"],
+        input[type="email"],
         button {
             width: 100%;
             padding: 12px;
@@ -47,15 +44,15 @@
         }
 
         button {
-            background-color: #ffc107;
-            color: black;
+            background-color: #28a745;
+            color: white;
             border: none;
             font-weight: bold;
             cursor: pointer;
         }
 
         button:hover {
-            background-color: #e0a800;
+            background-color: #218838;
         }
 
         @media (max-width: 500px) {
@@ -71,16 +68,27 @@
 </head>
 <body>
 
-<h1>Reset Your Password</h1>
+<h1>Forgot Password</h1>
 <form action="dashboard/admin/authentication/admin-class.php" method="POST">
     <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?>">
-    <input type="hidden" name="email" value="<?php echo htmlspecialchars($email) ?>">
-    <input type="hidden" name="token" value="<?php echo htmlspecialchars($token) ?>">
-    
-    <input type="password" name="new_password" placeholder="Enter new password" required>
-    <input type="password" name="confirm_password" placeholder="Confirm new password" required>
+    <input type="text" name="otp" placeholder="Enter OTP" required />
+    <input type="password" name="new_password" placeholder="New Password" required />
     <button type="submit" name="btn-reset-password">Reset Password</button>
 </form>
 
+<!-- Back Button -->
+<div style="text-align: center; margin-top: 15px;">
+    <a href="index.php" style="
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #6c757d;
+        color: white;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+    ">Back</a>
+</div>
+
 </body>
 </html>
+
